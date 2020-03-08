@@ -1,0 +1,32 @@
+{
+  "storeProducts": [
+    {
+      "id": 1,
+      "title": "Item 1",
+      "img": "../../assets/images/images.png",
+      "description": "Item one details will be here",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "title": "Item 2",
+      "img": "../../assets/images/img300.png",
+      "description": "Item two details will be here",
+      "price": 8
+    },
+    {
+      "id": 3,
+      "title": "Item 3",
+      "img": "../../assets/images/img300.png",
+      "description": "Item three details will be here",
+      "price": 5
+    },
+    {
+      "id": 4,
+      "title": "Item 4",
+      "img": "../../assets/images/img300.png",
+      "description": "Item four details will be here",
+      "price": 6
+    }
+  ]
+}
