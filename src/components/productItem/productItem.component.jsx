@@ -5,7 +5,7 @@ const ProductItem = ({ productItem, ondelete }) => {
     <div className="card" id={productItem.id}>
       <img
         className="card-img-top"
-        src="../../assets/images/images.png"
+        src={productItem.imgUrl}
         alt="Card cap"
       />
       <div className="card-body">
