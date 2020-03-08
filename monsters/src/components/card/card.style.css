@@ -1,0 +1,11 @@
+.card-container {
+    background-color: aquamarine;
+    border: none;
+    border-radius: 3px;
+    margin: 10px;
+    padding-bottom: 3rem;
+}
+
+.card-container img {
+    max-width: 200px;
+}

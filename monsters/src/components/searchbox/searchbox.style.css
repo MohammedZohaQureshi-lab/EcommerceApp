@@ -1,0 +1,8 @@
+.searchText input {
+    margin: 2rem 0 3rem 0;
+    border: 1px solid #cecece;
+    border-radius: 3px;
+    padding: 10px 8px;
+    width: 100%;
+    max-width: 250px;
+}
