@@ -1,7 +1,6 @@
 import React from "react";
 
 const AddProduct = ({ totalitems, modaltoggle }) => {
-  debugger;
   return (
     <div className="addProduct">
       <p className="text-secondary p-0 pb-3">
