@@ -63,11 +63,50 @@ function extend(Child, Parent) {
     Child.prototype.constructor = Child;
 }
 
-function Square(size,color) {
+function Square(size, color) {
     this.size = size;
-    Shape.call(this,color)
+    Shape.call(this, color)
 }
 
 extend(Square, Shape);
 const c3 = new CircleNew(1);
-const sq = new Square(10,"green");
+const sq = new Square(10, "green");
+
+
+//Composition over Inheritance
+function mixin(target, ...source) {
+    Object.assign(target, ...source);
+}
+const canEat = {
+    eat: function () {
+        console.log("eat")
+    }
+}
+
+const canWalk = {
+    walk: function () {
+        console.log("walk")
+    }
+}
+const canSwim = {
+    swim: function () {
+        console.log("swim")
+    }
+}
+
+function People() {
+    this.name = function () {
+        console.log("name");
+    }
+}
+function Fish() {
+    this.fishName = function () {
+        console.log("fish name");
+    }
+}
+mixin(People.prototype, canEat, canWalk);
+mixin(Fish.prototype, canEat, canSwim);
+const people = new People();
+const fish = new Fish();
+console.log(people);
+console.log(fish);
