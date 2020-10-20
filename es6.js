@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 class Circle {
     constructor(radius) {
         this.radius = radius;
@@ -76,4 +76,17 @@ class CirclePrivate2 {
     }
 }
 
-const cp = new CirclePrivate2(10)
+const cp = new CirclePrivate2(10);
+
+//3. WeakMaps (New Type in ES6)
+
+const _newRadius = new WeakMaps(); // its like dictionary, where keys are objects and values acn be anything. 
+//The name weak map because the keys are weak, so if ther are no references to the keys they will be jst gabage collector
+class CirclePrivate3 {
+    constructor(radius) {
+        _newRadius.set(this,radius)
+    }
+
+}
+
+const cp = new CirclePrivate3(10);
