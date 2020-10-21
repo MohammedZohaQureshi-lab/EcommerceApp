@@ -80,13 +80,30 @@ const cp = new CirclePrivate2(10);
 
 //3. WeakMaps (New Type in ES6)
 
-const _newRadius = new WeakMaps(); // its like dictionary, where keys are objects and values acn be anything. 
+const _newRadius = new WeakMap(); // its like dictionary, where keys are objects and values acn be anything. 
 //The name weak map because the keys are weak, so if ther are no references to the keys they will be jst gabage collector
+const _moves = new WeakMap();
 class CirclePrivate3 {
     constructor(radius) {
-        _newRadius.set(this,radius)
-    }
+        _newRadius.set(this, radius);//first arg is key and has to be an object not  a symol
+        // _moves.set(this, function () { // here the this be undefined, coz the class body is implemented in strict mode, due to this  the 
+        //     //this pointing to window object will be undefined. 
 
+        //     console.log("move", this)
+        // })
+        _moves.set(this, () => {
+            console.log("move", this)
+        })
+
+        //to set proper value of this and access instance of circle obj, v use arrow function, coz they use the this value of thir containing function
+    }
+    draw() {
+        console.log(_newRadius.get(this));
+        console.log(_moves.get(this)());
+    }
 }
 
-const cp = new CirclePrivate3(10);
+const cp3 = new CirclePrivate3(10);
+
+
+//Getters and setters
