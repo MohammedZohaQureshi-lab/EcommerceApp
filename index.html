@@ -6,6 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body,
+        h1 {
+            font-family: "museo-sans", sans-serif;
+        }
+
+        /*Checkbox switch start*/
+
+        .popover-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .popover-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+
+
+        .popover-switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #dc2b0d;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 30px;
+        }
+
+        .popover-switch-slider:hover {
+            background-color: #dc2b0d;
+        }
+
+        .popover-switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            border-radius: 50%;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .popover-switch input:checked+.popover-switch-slider {
+            background-color: #008b12;
+        }
+
+        .popover-switch input:focus+.popover-switch-slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        .popover-switch input:checked+.popover-switch-slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /*Checkbox switch end*/
+
+        .toggle-arrow i {
+            cursor: pointer;
+            color: #00BCD4;
+            font-size: 2rem;
+            -moz-transition: transform 1s;
+            -webkit-transition: transform 1s;
+            transition: transform 1s;
+        }
+
+        .flip {
+            transform: rotate(180deg);
+            color: #008b12 !important;
+
+        }
+    </style>
 </head>
 
 <body class="theme--grey-primary">
@@ -13,12 +100,26 @@
         <h1>Index Header</h1>
     </header>
     <div class="container">
+        <label class="popover-switch">
+            <input type="checkbox">
+            <span class="popover-switch-slider"></span>
+        </label>
+    </div>
 
+    <div class="toggle-arrow">
+        <i class="fas fa-arrow-alt-circle-down"></i>
+        <i class="far fa-arrow-alt-circle-down"></i>
     </div>
     <footer>
 
     </footer>
     <script src="es6.js"></script>
+    <script>
+        $(".toggle-arrow i").click((e) => {
+            console.log($(e.target).toggleClass("flip"))
+        })
+
+    </script>
 </body>
 
 </html>
