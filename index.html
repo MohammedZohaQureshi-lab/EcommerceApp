@@ -15,82 +15,156 @@
             font-family: "museo-sans", sans-serif;
         }
 
-        /*Checkbox switch start*/
 
-        .popover-switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
+        .menuItem__popover-childLink-items {
+            opacity: 0;
+            height: 0;
+            position: absolute;
+            background: lavender;
+            moz-transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+            transition: all 0.2s;
         }
 
-        .popover-switch input {
+        .menuItem__popover-childLink-items * {
+            height: 0;
+        }
+
+        .menuItem__popover-childLink-items.showItem {
+            opacity: 1;
+            height: auto;
+            margin-top: 10px;
+            background: lavender;
+            padding: 10px;
+            min-width: 75px;
+            moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+
+        }
+
+        .menuItem__popover-childLink-items.showItem * {
+            height: auto;
+            color: white;
+        }
+
+        .menuItem__popover-childLink-items.showItem {
+            background: #2680eb;
+        }
+
+        /*Checkbox switch start*/
+
+        .menuItem__popover-childLink-switch {
+            position: relative;
+            display: inline-block;
+            width: 35px;
+            height: 15px;
+        }
+
+        .menuItem__popover-childLink-switch input {
             opacity: 0;
             width: 0;
             height: 0;
         }
 
-
-
-        .popover-switch-slider {
+        .menuItem__popover-childLink-switch--slider {
             position: absolute;
             cursor: pointer;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #dc2b0d;
+            background-color: #00157d;
             -webkit-transition: .4s;
             transition: .4s;
             border-radius: 30px;
         }
 
-        .popover-switch-slider:hover {
-            background-color: #dc2b0d;
+        .menuItem__popover-childLink-switch--slider:hover {
+            opacity: 0.75;
         }
 
-        .popover-switch-slider:before {
+        .menuItem__popover-childLink-switch--slider:before {
             position: absolute;
             content: "";
-            height: 26px;
-            width: 26px;
+            height: 11px;
+            width: 11px;
             left: 4px;
-            bottom: 4px;
+            bottom: 2px;
             border-radius: 50%;
             background-color: white;
             -webkit-transition: .4s;
             transition: .4s;
         }
 
-        .popover-switch input:checked+.popover-switch-slider {
-            background-color: #008b12;
+        .menuItem__popover-childLink-switch input:checked+.menuItem__popover-childLink-switch--slider {
+            background-color: #2680eb;
         }
 
-        .popover-switch input:focus+.popover-switch-slider {
+        .menuItem__popover-childLink-switch input:focus+.menuItem__popover-childLink-switch--slider {
             box-shadow: 0 0 1px #2196F3;
         }
 
-        .popover-switch input:checked+.popover-switch-slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
+        .menuItem__popover-childLink-switch input:checked+.menuItem__popover-childLink-switch--slider:before {
+            -webkit-transform: translateX(16px);
+            -ms-transform: translateX(16px);
+            transform: translateX(16px);
         }
 
         /*Checkbox switch end*/
 
-        .toggle-arrow i {
+        /*ICONS*/
+        .menuItem__popover-childLink-arrow i {
             cursor: pointer;
-            color: #00BCD4;
-            font-size: 2rem;
-            -moz-transition: transform 1s;
-            -webkit-transition: transform 1s;
-            transition: transform 1s;
+            color: #00157d;
+            font-size: 1.5rem;
+            -moz-transition: transform 0.5s;
+            -webkit-transition: transform 0.5s;
+            transition: transform 0.5s;
+        }
+
+        .menuItem__popover-childLink-arrow i:hover {
+            opacity: 0.75;
         }
 
         .flip {
             transform: rotate(180deg);
-            color: #008b12 !important;
+            color: #2680eb !important;
 
+        }
+
+        /*EXTRA CSS*/
+        .component-wrapper {
+            display: flex;
+            justify-content: start;
+        }
+
+
+        .menuItem__popover-childLink-items ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .menuItem__popover-childLink-items ul li {
+            margin: 0;
+            padding: 5px 0 5px 5px;
+        }
+
+        .menuItem__popover-parentLink {
+            padding: 10px 10px 10px 0;
+            text-align: left;
+        }
+
+        .menuItem__popover-parentLink a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #010169;
+        }
+
+        .menuItem__popover-parentLink a:hover {
+            color: #9c0000;
         }
     </style>
 </head>
@@ -99,26 +173,478 @@
     <header>
         <h1>Index Header</h1>
     </header>
-    <div class="container">
-        <label class="popover-switch">
-            <input type="checkbox">
-            <span class="popover-switch-slider"></span>
-        </label>
+    <div class="component-wrapper">
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <label class="menuItem__popover-childLink-switch">
+                            <input class="menuItem__popover-childLink-switch--checkbox" type="checkbox">
+                            <span class="menuItem__popover-childLink-switch--slider"></span>
+                        </label>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a1</li>
+                                    <li>b1</li>
+                                    <li>c1</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <label class="menuItem__popover-childLink-switch">
+                            <input class="menuItem__popover-childLink-switch--checkbox" type="checkbox">
+                            <span class="menuItem__popover-childLink-switch--slider"></span>
+                        </label>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a2</li>
+                                    <li>b2</li>
+                                    <li>c2</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <label class="menuItem__popover-childLink-switch">
+                            <input class="menuItem__popover-childLink-switch--checkbox" type="checkbox">
+                            <span class="menuItem__popover-childLink-switch--slider"></span>
+                        </label>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="toggle-arrow">
-        <i class="fas fa-arrow-alt-circle-down"></i>
-        <i class="far fa-arrow-alt-circle-down"></i>
+
+    <div class="component-wrapper" style="margin-top: 2rem;">
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="far fa-arrow-alt-circle-down"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a1</li>
+                                    <li>b1</li>
+                                    <li>c1</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fas fa-arrow-alt-circle-down"></i>
+
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a2</li>
+                                    <li>b2</li>
+                                    <li>c2</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fal fa-angle-double-down"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fad fa-angle-down"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fas fa-caret-circle-down"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="far fa-caret-circle-down"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fal fa-caret-circle-down"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fad fa-chevron-double-down"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="component-wrapper" style="margin-top: 2rem;">
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="far fa-expand-arrows-alt"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a1</li>
+                                    <li>b1</li>
+                                    <li>c1</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fad fa-expand"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a2</li>
+                                    <li>b2</li>
+                                    <li>c2</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <div class="menuItem__popover">
+                    <div class="menuItem__popover-parentLink">
+                        <a href="#">Parent Link</a>
+                    </div>
+                    <div class="menuItem__popover-childLink">
+                        <div class="menuItem__popover-childLink-arrow">
+                            <i class="far fa-plus-circle"></i>
+                        </div>
+                        <div class="menuItem__popover-childLink-items">
+                            <div class="parsers">
+                                <ul>
+                                    <li>a3</li>
+                                    <li>b3</li>
+                                    <li>c3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
 
     </footer>
     <script src="es6.js"></script>
     <script>
-        $(".toggle-arrow i").click((e) => {
-            console.log($(e.target).toggleClass("flip"))
-        })
+        $(document).ready(() => {
 
+            //ICONS
+            $(".menuItem__popover-childLink-arrow i").on('click', (e) => {
+                let classString = e.target.className;
+                if (classString.includes("fa-expand")) {
+                    e.target.className = e.target.className.replace("fa-expand", "fa-compress")
+                    $(e.target).toggleClass("flip")
+                    let childItem = $(e.target).parents('.menuItem__popover-childLink');
+                    $(childItem).children(".menuItem__popover-childLink-items").toggleClass("showItem");
+                }
+
+                else if (classString.includes("fa-compress")) {
+                    e.target.className = e.target.className.replace("fa-compress", "fa-expand")
+                    $(e.target).toggleClass("flip")
+                    let childItem = $(e.target).parents('.menuItem__popover-childLink');
+                    $(childItem).children(".menuItem__popover-childLink-items").toggleClass("showItem");
+                }
+                else if (classString.includes("fa-plus")) {
+                    e.target.className = e.target.className.replace("fa-plus", "fa-minus")
+                    $(e.target).toggleClass("flip")
+                    let childItem = $(e.target).parents('.menuItem__popover-childLink');
+                    $(childItem).children(".menuItem__popover-childLink-items").toggleClass("showItem");
+                }
+                else if (classString.includes("fa-minus")) {
+                    e.target.className = e.target.className.replace("fa-minus", "fa-plus")
+                    $(e.target).toggleClass("flip")
+                    let childItem = $(e.target).parents('.menuItem__popover-childLink');
+                    $(childItem).children(".menuItem__popover-childLink-items").toggleClass("showItem");
+                }
+
+                else if ($(e.target).hasClass("fa-expand-arrows-alt")) {
+                    $(e.target).toggleClass("fa-compress-arrows-alt flip")
+                    let childItem = $(e.target).parents('.menuItem__popover-childLink');
+                    $(childItem).children(".menuItem__popover-childLink-items").toggleClass("showItem");
+                }
+
+                else {
+                    $(e.target).toggleClass("flip");
+                    let childItem = $(e.target).parents('.menuItem__popover-childLink');
+                    $(childItem).children(".menuItem__popover-childLink-items").toggleClass("showItem");
+                }
+
+            })
+
+            //Check box
+            $(".menuItem__popover-childLink-switch").change((e) => {
+                // $(".menuItem__popover-childLink-switch--checkbox").prop("checked", false);
+                // $(".menuItem__popover-childLink-items").removeClass("showItem");
+                let childItem = $(e.target).parents('.menuItem__popover-childLink');
+                //$(childItem).find(".menuItem__popover-childLink-switch--checkbox").prop("checked", true);
+                if ($(childItem).find(".menuItem__popover-childLink-switch--checkbox").is(':checked')) {
+                    $(childItem).children(".menuItem__popover-childLink-items").toggleClass("showItem");
+                } else {
+                    $(childItem).children(".menuItem__popover-childLink-items").removeClass("showItem");
+                }
+            });
+        })
     </script>
 </body>
 
