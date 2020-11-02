@@ -1,0 +1,254 @@
+.services-block__desktop {
+    background: radial-gradient(circle at top left, #ffffff 0%, #efeff2 100%);
+}
+
+.services-block__mobile {
+    display: none;
+}
+
+.tablinks-inner {
+    width: 100%;
+}
+
+.tablinks-inner a {
+    width: 100%;
+    display: block;
+}
+
+.tablinks-inner a .image {
+    width: 100%;
+}
+
+.tabcontent-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.btn-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: 0;
+    background: radial-gradient(circle at top left, #ffffff 0%, #efeff2 100%);
+    height: 300px;
+}
+
+.btn-tabs button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btn-tabs button .tablinks-inner .title {
+    text-align: center;
+    font-size: 16px;
+}
+
+.services__container-title {
+    text-align: center;
+    font-size: 45px;
+    margin: 20px 0 40px;
+}
+
+.tabcontent-column--text {
+    padding: 20px 0 0;
+    width: 75%;
+}
+
+.tabcontent-column--text .title {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.tabcontent-column--text .description {
+    font-size: 16px;
+    font-weight: 300;
+    color: #7d7d7d;
+    margin: 0 0 20px 0;
+}
+
+.tabcontent-column--text button.more-button {
+    border: none;
+    background: #01273e;
+    color: white;
+    box-shadow: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+/* Create an active/current "tab button" class */
+
+.btn-tabs button.active .tablinks-inner {
+    position: relative;
+    transform: translate(10px, -25px);
+}
+
+.btn-tabs button.active .tablinks-inner .title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* Style the tab content */
+
+.tabcontent {
+    padding: 0px 12px;
+    border: none;
+    width: 100%;
+    border-left: none;
+    max-height: 330px;
+    display: none;
+}
+
+.tabcontent-column {
+    width: 100%;
+    height: 100%;
+}
+
+.tabcontent-column--image {
+    width: 100%;
+    height: 100%;
+}
+
+.tabcontent-column--image .image {
+    width: 100%;
+    height: 100%;
+    padding: 30px 70px 80px 50px;
+}
+
+
+/*ACCORDION*/
+
+.accordion-container {
+    padding: 10px 20px;
+    background: transparent;
+}
+
+.accordionWrapper {
+    padding: 0;
+    background: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    box-shadow: none;
+}
+
+.accordion__item {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Open-sans', Arial, sans-serif;
+    margin: 0 0 10px 0;
+    background: transparent;
+}
+
+.accordion__item-heading {
+    cursor: pointer;
+    margin: 0;
+    padding: 10px;
+    padding: 10px;
+    background: #e8e8e8;
+    color: #868686;
+    width: 100%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.accordion__item-heading i {
+    float: right;
+    position: relative;
+    top: 3px;
+    transition: transform 0.3s;
+}
+
+.open .accordion__item-heading i {
+    transform: rotate(180deg);
+    transition: transform 0.5s;
+}
+
+.accordion__item.close .accordion__item-content {
+    height: 0px;
+    transition: height 1s ease-out;
+    transform: scaleY(0);
+    float: left;
+    display: block;
+    background: transparent;
+}
+
+.accordion__item.open .accordion__item-content {
+    padding: 20px;
+    background-color: #fff;
+    border: 0;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    display: block;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.4s ease;
+    box-shadow: 0px 5px 7px -3px grey;
+}
+
+.open .accordion__item-heading {
+    margin: 0px;
+    border-radius: 3px 3px 0 0;
+    background-color: #d4d4d4;
+    color: #484848;
+}
+
+.accordion__item-content {
+    text-align: center;
+    width: 100%;
+}
+
+.accordion__item-content a {
+    display: block;
+}
+
+.accordion__item-content .image {
+    width: 100%;
+}
+
+.accordion__item-content .description {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+}
+
+.accordion__item-content button.more-button {
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 14px;
+    border: 0;
+    background-color: transparent;
+    color: #0063a5;
+    box-shadow: none;
+    outline: none;
+    font-weight: 700;
+}
+
+.accordion__item-content button.more-button:hover {
+    color: black;
+}
+
+@media only screen and (max-width:768px) {
+    .services-block__desktop {
+        display: none;
+    }
+    .services-block__mobile {
+        display: block;
+    }
+}

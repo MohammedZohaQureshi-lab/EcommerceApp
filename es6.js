@@ -28,7 +28,7 @@ class Maths {
 // THIS KEYWORD using js function
 const CircleNew = function () {
     this.draw = function () {
-        console.log(this)
+        //console.log(this)
     }
 }
 const cn = new CircleNew();
@@ -40,7 +40,7 @@ draw();
 //THIS KEYWORD  using CLASS 
 class CircleClass {
     draw1() {
-        console.log(this)
+        //console.log(this)
     }
 }
 const cc = new CircleClass();
@@ -107,3 +107,60 @@ const cp3 = new CirclePrivate3(10);
 
 
 //Getters and setters
+const _width = new WeakMap();
+class Square {
+    constructor(width) {
+        _width.set(this, width);
+        //OLD WAY
+        Object.defineProperty(this, 'widthGet', {
+            get: function () {
+                return width;
+            }
+        })
+
+    }
+
+    //New Way
+    get getWidth() {
+        return _width.get(this)
+    }
+    set setWidth(value) {
+        if (value <= 0) throw new Error("Error");
+        _width.set(this, value)
+    }
+
+    draw() {
+        console.log("Draw a square", _width.get(this));
+    }
+}
+const s = new Square(10);
+
+//IMHERITANCE 
+
+class Shapes {
+    constructor(radius) {
+        this.radius = radius;
+    }
+    move() {
+        console.log("Shape Draw");
+    }
+}
+
+class SemiCircle extends Shapes {
+    constructor(radius, color) {
+        super(radius)
+        this.color = color;
+    }
+}
+
+const ext = new SemiCircle(1, "red");
+
+//Method Overriding
+
+class overrideCircles extends Shapes {
+    move() {
+        console.log("Child circle Draw");
+    }
+}
+
+const over = new overrideCircles();
