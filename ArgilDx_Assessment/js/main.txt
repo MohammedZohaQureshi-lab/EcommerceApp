@@ -5,7 +5,7 @@ const onresize = function () {
 let docVarialbles = {
     toggleMenu: document.querySelector(".slide-menu"),
     overlay: document.querySelector(".slide-overlay"),
-    menuBtn: document.querySelector("button.menu-toggle-icon a"),
+    menuBtn: document.querySelector("button.menu-toggle-icon i"),
     searchModal: document.querySelector(".search__modal")
 }
 const showSideMenu = e => {
