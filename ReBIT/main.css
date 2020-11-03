@@ -1,0 +1,376 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+
+}
+
+body * {
+    font-family: Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    background-color: white;
+    box-shadow: 0px 8px 14px -6px #929292;
+}
+
+.header-container * {
+    align-self: center;
+}
+
+.header-container h3.secondary-title {
+    color: #101c33;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+ul.nav-links {
+    justify-content: flex-end;
+}
+
+ul.nav-links li {
+    background: transparent;
+    color: #101c33;
+}
+
+ul.nav-links li a {
+    font-weight: 600;
+    font-size: 18px;
+    color: #101c33;
+    text-decoration: none;
+}
+
+ul.nav-links li a:hover {
+    color: gray;
+}
+
+
+.header-container .site-logo {
+    width: 100%;
+}
+
+.header-container .site-logo img {
+    width: auto;
+    max-height: 60px;
+}
+
+.section-container {
+    margin: 100px auto 6rem;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.section-title.text-center {
+    color: #1d3158;
+    padding-bottom: 10px;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.formContainer {
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.formContainer .form-group {
+    position: relative;
+    margin: 0px auto 20px;
+    width: 100%;
+    max-width: 70%;
+}
+
+.formContainer .form-group label {
+    position: absolute;
+    font-size: 12px;
+    color: gray;
+    left: 5px;
+    top: 8px;
+    bottom: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.formContainer .form-group input {
+    border: 0;
+    border-bottom: 1.5px solid #8df713;
+    padding: 10px 10px 10px 25px;
+    border-radius: 3px;
+    font-size: 12px;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    color: #1d3158;
+}
+
+.formContainer .datalist-group {
+    top: -8px;
+}
+
+.formContainer .form-group input:active,
+.formContainer .form-group input:focus {
+    box-shadow: 0px 6px 19px -13px #444444;
+    outline: none;
+}
+
+
+.formContainer .form-group input::placeholder {
+    color: #ddd;
+    font-size: 12px;
+    opacity: 1
+}
+
+.formContainer .form-group input::-ms-input-placeholder {
+    color: #ddd;
+    font-size: 12px;
+    opacity: 1
+}
+
+.formContainer .form-group input:-ms-input-placeholder {
+    color: #ddd;
+    font-size: 12px;
+    opacity: 1
+}
+
+.formContainer .form-group input::-moz-placeholder {
+    color: #ddd;
+    font-size: 12px;
+    opacity: 1
+}
+
+.formContainer .form-group input::-webkit-input-placeholder {
+    color: #ddd;
+    font-size: 12px;
+    opacity: 1
+}
+
+.button-group {
+    justify-content: center;
+}
+
+.button-group button {
+    margin: 10px;
+    padding: 5px 20px;
+    min-width: 100px;
+    font-size: 12px;
+    background-color: #1d3158;
+    border: none;
+    outline: none;
+}
+
+.button-group button.btn-secondary {
+    background-color: #868686;
+}
+
+.button-group button:hover {
+    background-color: #1d3158;
+    box-shadow: 0px 14px 6px -8px #c3c3c3;
+    transform: scale(1.05);
+}
+
+.button-group button:active {
+    border: none;
+    outline: none;
+}
+
+.button-group button.btn-secondary:hover {
+    background-color: #868686;
+}
+
+.footer-container {
+    background-color: #607D8B;
+    padding: 15px 20px;
+}
+
+.footer-container .site-logo {
+    margin: 10px;
+}
+
+.footer-container ul,
+.footer-container ul li {
+    background-color: transparent;
+}
+
+.footer-container .social-links {
+    justify-content: flex-end;
+}
+
+.footer-container .social-links a {
+    color: white;
+    font-size: 24px;
+}
+
+.footer-container .copy-right-text {
+    color: white;
+    font-size: 11px;
+    margin: 10px 0 0 10px;
+}
+
+/*DASHBOARD*/
+.userDetails {
+    width: 100%;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 15px;
+}
+
+.userDetails .media img {
+    width: 100%;
+    min-width: 60px;
+    max-width: 60px;
+    max-height: 60px;
+    margin-right: 5px;
+}
+
+.userDetails .icon {
+    position: absolute;
+    left: 57px;
+    bottom: 0;
+    background-color: #101c33;
+    color: #fff;
+    font-size: 10px;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.settings {
+    position: absolute;
+    transform: translate(0, -50%);
+    right: -5px;
+    top: 10px;
+    font-size: 16px;
+}
+
+
+.userDetails .media .media-body {
+    font-size: 12px;
+    color: gray;
+    color: #101c33;
+}
+
+.userDetails .media .media-body h5 {
+    font-size: 14px;
+    FONT-WEIGHT: 500;
+    margin: 0 0 1px 0;
+    color: #101c33;
+}
+
+
+.nested {
+    display: none;
+}
+
+.nested.active {
+    display: block;
+}
+
+.dashboard-section-container {
+    margin-top: 70px;
+    padding-top: 1px;
+    padding-bottom: 30px;
+    background: radial-gradient(circle at top left, #ffffff 0%, #efeff2 100%);
+}
+
+.dashboard-section-container .row {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 0px 11px -7px grey;
+}
+
+.dashboard-column-left {
+    border-right: 1px solid #eee;
+    padding: 20px 10px;
+}
+
+.dashboard-column-right {
+    padding: 20px 10px;
+}
+
+.dashboard-column-right .row {
+    position: relative;
+    left: 8px;
+    box-shadow: 0px 0px 11px -7px grey !important;
+}
+
+.dashboard-column-right row {
+    box-shadow: 0px 0px 11px -7px grey;
+    position: relative;
+    left: 9px;
+}
+
+.dashboard-charts-cotainer {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.charts-block {
+    width: 100%;
+}
+
+.charts-block-item--title {
+    font-size: 14px;
+    text-align: center;
+}
+
+.charts-block img {
+    width: 100%;
+}
+
+.dashboard-section-container .section-title.text-center {
+    margin-bottom: 20px;
+}
+
+.dashboard-section-container .row {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 0px 11px -7px grey;
+}
+
+.dashboard-table-cotainer .table-responsive {
+    overflow-x: auto;
+}
+
+.dashboard-table-cotainer table thead th {
+    font-size: 14px;
+    color: #101c33;
+}
+
+.dashboard-table-cotainer table tr td {
+    font-size: 12px;
+    color: #101c33;
+}
+
+@media only screen and (max-width: 768px) {
+    .formContainer .form-group {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .formContainer .form-group {
+        position: relative;
+        margin: 0px auto 20px;
+        width: 100%;
+        max-width: 80%;
+    }
+}

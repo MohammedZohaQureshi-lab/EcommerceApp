@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="icon" href="./assets/images/tab-icon.png" sizes="32x32">
+    <link rel="icon" href="./assets/images/tab-icon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="./assets/images/tab-icon.png">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Registration | Reserve Bank Information Technology Limited</title>
+</head>
+
+<body>
+    <header>
+        <div class="row header-container">
+
+            <div class="col-2">
+                <div class="site-logo">
+                    <img src="./assets/images/rebit-logo-large.jpg">
+                </div>
+            </div>
+            <div class="col-3">
+                <h3 class="secondary-title">AFF Application Form</h5>
+            </div>
+            <div class="col-7">
+                <nav class="nav-block">
+                    <ul class="nav-links list-group list-group-horizontal">
+                        <li class="list-group-item border-0">
+                            <a href="dashboard.html">
+                                Contact US
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="dashboard.html">
+                                FAQs</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+    <section class="section-container">
+        <div class="container my-5">
+            <h2 class="section-title text-center">Registration Form</h2>
+            <form id="registrationForm" class="formContainer">
+                <div class="form-row justify-content-center">
+                    <div class="col-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label for="userName"><i class="fas fa-user"></i></label>
+                            <input type="text" class="form-control" id="userName" placeholder="User Name"
+                                onfocus="this.placeholder=''" onblur="this.placeholder='User Name'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="emailId"><i class="fas fa-envelope"></i></label>
+                            <input type="email" class="form-control" id="emailId" placeholder="Email"
+                                onfocus="this.placeholder=''" onblur="this.placeholder='Email'" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNumber"><i class="fas fa-phone-alt"></i></label>
+                            <input type="number" class="form-control" id="phoneNumber" placeholder="Phone"
+                                onfocus="this.placeholder=''" onblur="this.placeholder='Phone'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="userAddress"><i class="fas fa-address-book"></i></label>
+                            <input type="text" class="form-control" id="userAddress" placeholder="Address"
+                                onfocus="this.placeholder=''" onblur="this.placeholder='Address'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="userPincode"><i class="fas fa-map-marker-alt"></i></label>
+                            <input type="text" class="form-control" id="userPincode" placeholder="Pincode"
+                                onfocus="this.placeholder=''" onblur="this.placeholder='Pincode'" required />
+                        </div>
+                        <div class="form-group datalist-group">
+                            <label for="inputState"> <i class="fas fa-map-marked-alt"></i> </label>
+                            <input type="text" list="inputState" placeholder="State">
+                            <datalist id="inputState">
+                                <option value="Maharashtra">
+                                <option value="Delhi">
+                                <option value="Karnatak">
+                                <option value="Andhra Pradesh">
+                                <option value="Tamil Nadu">
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label for="companyName"><i class="fas fa-users"></i></label>
+                            <input type="text" class="form-control" id="companyName" placeholder="Company Name"
+                                onfocus="this.placeholder=''" onblur="this.placeholder='Company Name'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="bankName"> <i class="fas fa-university"></i></label>
+                            <input type="text" class="form-control" id="emailId" placeholder="Name of the bank"
+                                onfocus="this.placeholder=''" onblur="this.placeholder='Name of the bank'" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cinNumber"><i class="fas fa-edit"></i></label>
+                            <input type="text" class="form-control" id="cinNumber"
+                                placeholder="CIN (Corporate Identify Number)" onfocus="this.placeholder=''"
+                                onblur="this.placeholder='CIN (Corporate Identify Number)'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="ifscCode"><i class="fas fa-pen-square"></i></label>
+                            <input type="text" class="form-control" id="ifscCode" placeholder="IFSC Code"
+                                onfocus="this.placeholder=''" onblur="this.placeholder='IFSC Code'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="panId"> <i class="fas fa-id-card"></i></label>
+                            <input type="text" class="form-control" id="panId" placeholder="Pan Details"
+                                onfocus="this.placeholder=''" onblur="this.placeholder='Pan Details'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="licenceNumber"><i class="far fa-credit-card"></i></label>
+                            <input type="text" class="form-control" id="licenceNumber"
+                                placeholder="Existing licence number (optional)" onfocus="this.placeholder=''"
+                                onblur="this.placeholder='Existing licence number (optional)'" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="button-group d-flex">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button class="btn btn-secondary">Cancel</button>
+                </div>
+
+            </form>
+            <!-- <i class="fas fa-id-card-alt"></i> -->
+        </div>
+    </section>
+
+    <footer>
+        <section class="footer-container">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-7">
+                    <div class="site-logo"><img alt="logo" src="./assets/images/footer-logo.svg"></div>
+
+                    <p class="copy-right-text">© ReBIT. All rights reserved</p>
+                </div>
+
+                <div class="col-lg-5">
+                    <ul class="social-links list-group list-group-horizontal">
+                        <li class="list-group-item border-0">
+                            <a href="https://www.linkedin.com/company/reserve-bank-information-technology-pvt-ltd"
+                                target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="https://twitter.com/reservebankit" target="_blank">
+                                <i class="fab fa-twitter"></i></a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </footer>
+
+</body>
+
+</html>
